@@ -1,18 +1,11 @@
 import { useState } from "react";
 import "./MiOrg.css"
 
-const MiOrg = () => {
-
-    const [mostrar, actualizarMostrar] = useState(true);
-
-    const manejarClick = () => {
-        console.log("Click en el botón", !mostrar)
-        actualizarMostrar(!mostrar);
-    }
+const MiOrg = (props) => {
 
     return <section className="orgSection">
         <h3 className="title">Mi Organización</h3>
-        <img src="/img/boton-add.png" alt="add" onClick={manejarClick} />
+        <img src="/img/boton-add.png" alt="add" onClick={props.cambiarMostrar} />
     </section>
 }
 

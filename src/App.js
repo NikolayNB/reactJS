@@ -8,11 +8,13 @@ function App() {
 
   const [mostrarFormulario, actualizarMostrar] = useState(true);
 
+  const cambiarMostrar = () => {actualizarMostrar(!mostrarFormulario)};
+
   return (
     <div className="App">
       <Header />
-      {mostrarFormulario === true ? <Formulario /> : <div></div>}
-      <MiOrg />
+      {mostrarFormulario === true ? <Formulario /> : <></>}
+      <MiOrg cambiarMostrar={cambiarMostrar}/>
     </div>
   );
 }
