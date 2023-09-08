@@ -55,10 +55,7 @@ function App() {
       {mostrarFormulario === true ? <Formulario /> : <></>}
       <MiOrg cambiarMostrar={cambiarMostrar}/>
       {
-        equipos.map((equipo) => {
-          console.log("Equipo", equipo)
-          return <Equipo datos={equipo} />
-        })
+        equipos.map((equipo) => <Equipo datos={equipo} key={equipo.titulo} />)
       }
     </div>
   );
