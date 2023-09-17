@@ -50,6 +50,8 @@ function App() {
 
   const eliminarColaborador = (colaborador) => {console.log("eliminar", colaborador)}
 
+  const actualizarColor= (color, titulo) => {console.log("actualizar: ", color, titulo)}
+
   const equipos = [
     {
       titulo: "Programación",
@@ -100,7 +102,9 @@ function App() {
             key = {equipo.titulo} 
             colaboradores = { colaboradores.filter( colaborador => 
               colaborador.equipo === equipo.titulo)}
-            eliminarColaborador={eliminarColaborador} />)
+            eliminarColaborador={eliminarColaborador}
+            actualizarColor={actualizarColor}
+            />)
             
       }
 

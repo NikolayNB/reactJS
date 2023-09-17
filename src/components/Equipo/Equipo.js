@@ -4,7 +4,7 @@ import Colaborador from "../Colaborador/Colaborador"
 const Equipo = (props) => {
 
     const { colorPrimario, colorSecundario, titulo} = props.datos
-    const {colaboradores, eliminarColaborador} = props
+    const {colaboradores, eliminarColaborador, actualizarColor} = props
     const obj = {
         backgroundColor: colorSecundario
     }
@@ -18,7 +18,7 @@ const Equipo = (props) => {
                     type="color"
                     className="input-color"
                     value={colorSecundario}
-                    onChange={(e) => console.log(e.target.value)}
+                    onChange={(e) => actualizarColor(e.target.value, titulo)}
                 />
                 <h3 style={estiloTitulo}>{titulo}</h3>
                 <div className="colaboradores">
