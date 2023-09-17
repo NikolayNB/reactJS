@@ -41,18 +41,7 @@ function App() {
     puesto: "Instructor"
   }]);
 
-  const cambiarMostrar = () => {actualizarMostrar(!mostrarFormulario)};
-
-  const registrarColaborador = (colaborador) => {
-    console.log("nuevo colaborador", colaborador)
-    actualizarColaboradores([...colaboradores, colaborador])
-  }
-
-  const eliminarColaborador = (colaborador) => {console.log("eliminar", colaborador)}
-
-  const actualizarColor= (color, titulo) => {console.log("actualizar: ", color, titulo)}
-
-  const equipos = [
+  const [equipos, actualizarEquipos] = useState([
     {
       titulo: "Programación",
       colorPrimario: "#57C278",
@@ -88,7 +77,27 @@ function App() {
       colorPrimario: "#FF8A29",
       colorSecundario: "#FFEEDF"
     }
-  ]
+  ])
+
+  const cambiarMostrar = () => {actualizarMostrar(!mostrarFormulario)};
+
+  const registrarColaborador = (colaborador) => {
+    console.log("nuevo colaborador", colaborador)
+    actualizarColaboradores([...colaboradores, colaborador])
+  }
+
+  const eliminarColaborador = (colaborador) => {console.log("eliminar", colaborador)}
+
+  const actualizarColor= (color, titulo) => {
+    console.log("actualizar: ", color, titulo)
+    const equiposActualizados = equipos.map((equipo) => {
+      if(equipo.titulo === titulo){
+        equipo.colorPrimario = color
+      }
+      return equipo
+    })
+    actualizarEquipos(equiposActualizados)
+  }
 
   return (
     <div className="App">
