@@ -9,11 +9,36 @@ import Footer from './components/Footer/Footer';
 function App() {
 
   const [mostrarFormulario, actualizarMostrar] = useState(false);
-  const [colaboradores, actualizarColaboradores] = useState([{
+  const [colaboradores, actualizarColaboradores] = useState([
+  {
+    equipo: "Programación",
+    foto: "https://github.com/genesysaluralatam.png",
+    nombre: "Genesys Rondón",
+    puesto: "Desarrolladora de software e instructora"
+  },
+  {
+    equipo: "UX y Diseño",
+    foto: "https://github.com/JeanmarieAluraLatam.png",
+    nombre: "Jeanmarie Quijada",
+    puesto: "Instructora en Alura Latam"
+  },
+  {
+    equipo: "Programación",
+    foto: "https://github.com/christianpva.png",
+    nombre: "Christian Velasco",
+    puesto: "Head de Alura e Instructor"
+  },
+  {
+    equipo: "Innovación y Gestión",
+    foto: "https://github.com/JoseDarioGonzalezCha.png",
+    nombre: "Jose Gonzalez",
+    puesto: "Dev FullStack"
+  },
+  {
     equipo: "Front-End",
-    foto: "https://avatars.githubusercontent.com/u/135383621?v=4",
-    nombre: "Nikolay Núñez",
-    puesto: "Estudiante"
+    foto: "https://github.com/harlandlohora.png",
+    nombre: "Harland Lohora",
+    puesto: "Instructor"
   }]);
 
   const cambiarMostrar = () => {actualizarMostrar(!mostrarFormulario)};
@@ -22,6 +47,8 @@ function App() {
     console.log("nuevo colaborador", colaborador)
     actualizarColaboradores([...colaboradores, colaborador])
   }
+
+  const eliminarColaborador = (colaborador) => {console.log("eliminar", colaborador)}
 
   const equipos = [
     {
@@ -72,7 +99,9 @@ function App() {
             datos = {equipo} 
             key = {equipo.titulo} 
             colaboradores = { colaboradores.filter( colaborador => 
-              colaborador.equipo === equipo.titulo)} />)
+              colaborador.equipo === equipo.titulo)}
+            eliminarColaborador={eliminarColaborador} />)
+            
       }
 
       <Footer />
