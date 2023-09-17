@@ -14,6 +14,12 @@ const Equipo = (props) => {
     return <>
         { colaboradores.length > 0 &&
             <section className="equipo" style={obj}>
+                <input 
+                    type="color"
+                    className="input-color"
+                    value={colorSecundario}
+                    onChange={(e) => console.log(e.target.value)}
+                />
                 <h3 style={estiloTitulo}>{titulo}</h3>
                 <div className="colaboradores">
                     {
