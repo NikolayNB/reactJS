@@ -99,7 +99,11 @@ function App() {
     actualizarColaboradores([...colaboradores, colaborador])
   }
 
-  const eliminarColaborador = (colaborador) => {console.log("eliminar", colaborador)}
+  const eliminarColaborador = (id) => {
+    console.log("eliminar", id)
+    const nuevosColaboradores = colaboradores.filter((colaborador) => colaborador.id !== id)
+    actualizarColaboradores(nuevosColaboradores)
+  }
 
   const actualizarColor= (color, id) => {
     console.log("actualizar: ", color, id)
