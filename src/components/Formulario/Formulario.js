@@ -66,7 +66,7 @@ const Formulario = (props) => {
             </Boton>
         </form>
         <form onSubmit={manejarNuevoEquipo}>
-            <h2>Rellena el formulario para crear el equipo.</h2>
+            <h3>Rellena el formulario para crear el equipo.</h3>
             <CampoTexto 
                 titulo="Titulo" 
                 placeholder="Ingresar titulo" 
@@ -79,7 +79,8 @@ const Formulario = (props) => {
                 placeholder="Ingresar el color en Hex" 
                 required
                 valor={color}
-                actualizarValor={actualizarColor} 
+                actualizarValor={actualizarColor}
+                type="color"
             />
             <Boton>
                 Registrar equipo
